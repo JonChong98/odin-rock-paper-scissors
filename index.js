@@ -69,6 +69,7 @@ function updateScore(input) {
         playerScore.textContent = newScore;
         if (newScore === 5) {
             result.textContent = "Player wins!";
+            disableButtons();
         } else {
             result.textContent = "Player scores a point!";
         }
@@ -78,12 +79,21 @@ function updateScore(input) {
         computerScore.textContent = newScore;
         if (newScore === 5) {
             result.textContent = "Computer wins!";
+            disableButtons;
         } else {
             result.textContent = "Computer scores a point!";
         }
     } else {
         result.textContent = "It's a draw!";
     }
+}
+
+// Disable button once someone wins 5 points
+function disableButtons() {
+    const btns = document.querySelectorAll("button");
+    btns.forEach(btn => {
+        btn.setAttribute("disabled", "");
+    });
 }
 
 const btns = document.querySelectorAll("button");
