@@ -14,6 +14,7 @@ function getComputerChoice() {
             break;
         default:
             console.log("No number between 0-2 found, unable to generate a choice");
+            choice = "void";
     }
     return choice;
 }
@@ -58,3 +59,37 @@ function playRound(playerSelection, computerSelection) {
     }
     return result;
 }
+
+// Updates the Score
+function updateScore(input) {
+    let result = document.querySelector(".result");
+    if (input === "player") {
+        let playerScore = document.querySelector(".player-score");
+        let newScore = parseInt(playerScore.textContent, 10) + 1;
+        playerScore.textContent = newScore;
+        if (newScore === 5) {
+            result.textContent = "Player wins!";
+        } else {
+            result.textContent = "Player scores a point!";
+        }
+    } else if (input === "computer") {
+        let computerScore = document.querySelector(".computer-score");
+        let newScore = parseInt(computerScore.textContent, 10) + 1;
+        computerScore.textContent = newScore;
+        if (newScore === 5) {
+            result.textContent = "Computer wins!";
+        } else {
+            result.textContent = "Computer scores a point!";
+        }
+    } else {
+        result.textContent = "It's a draw!";
+    }
+}
+
+const btns = document.querySelectorAll("button");
+btns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        let result = playRound(btn.textContent, getComputerChoice());
+        updateScore(result);
+    })
+});
