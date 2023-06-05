@@ -79,7 +79,7 @@ function updateScore(input) {
         computerScore.textContent = newScore;
         if (newScore === 5) {
             result.textContent = "Computer wins!";
-            disableButtons;
+            disableButtons();
         } else {
             result.textContent = "Computer scores a point!";
         }
