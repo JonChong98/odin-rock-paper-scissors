@@ -13,5 +13,5 @@ Author: Freepik
 Taken from: https://www.flaticon.com/free-icon/granite_6223796?term=stone&page=1&position=5&origin=search&related_id=6223796  
   
 scissors.png  
-Author: Freepik 
+Author: Freepik  
 Taken from: https://www.flaticon.com/free-icon/scissors_737812?term=scissors&page=1&position=13&origin=search&related_id=737812   
